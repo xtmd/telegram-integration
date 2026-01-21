@@ -469,7 +469,6 @@ func (s *Service) searchHandler(ctx context.Context, b *bot.Bot, m *models.Updat
 		})
 		return
 	}
-	user := currentSessionResponse.User
 	results, err := s.client.MemoService.ListMemos(ctx, &v1pb.ListMemosRequest{
 		PageSize: 10,
 		Filter:   fmt.Sprintf("content.contains('%s')", searchString),
